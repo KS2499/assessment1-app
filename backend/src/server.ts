@@ -1,19 +1,22 @@
 import express from "express";
 import axios from "axios";
+import cors from "cors";
 
 const app = express();
+app.use(cors());
 const PORT = 5000;
 
-app.get("/api/users", async (req, res) => {
+app.get("/api/authors", async (req, res) => {
   try {
     const response = await axios.get(
       "https://jsonplaceholder.typicode.com/users"
     );
-    const users = response.data;
-    res.json(users);
+    console.log(`got GET request`);
+    const authors = response.data;
+    res.json(authors);
   } catch (error) {
-    console.error("Error fetching users:", error);
-    res.status(500).json({ error: "Failed to fetch users" });
+    console.error("Error fetching authors:", error);
+    res.status(500).json({ error: "Failed to fetch authors" });
   }
 });
 
