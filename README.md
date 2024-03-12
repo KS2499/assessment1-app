@@ -1,1 +1,1 @@
-Enter Relevant folders for respective isntructions!
+# Enter Relevant folders(frontend/backend) for respective instructions!
